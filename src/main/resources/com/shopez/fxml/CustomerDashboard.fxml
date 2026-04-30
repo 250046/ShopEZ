@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefWidth="900" prefHeight="650"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.shopez.controller.CustomerDashboardController">
+
+    <!-- Top Navigation -->
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="nav-bar">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <Label text="ShopEZ" styleClass="nav-brand"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="browseBtn" text="Browse" onAction="#handleBrowse" styleClass="nav-button"/>
+            <Button fx:id="cartBtn" text="Cart (0)" onAction="#handleCart" styleClass="nav-button"/>
+            <Button fx:id="ordersBtn" text="Orders" onAction="#handleOrders" styleClass="nav-button"/>
+            <Label fx:id="walletLabel" text="Wallet: $0.00" styleClass="wallet-label"/>
+            <Button fx:id="topUpBtn" text="Top Up" onAction="#handleTopUp" styleClass="nav-button"/>
+            <Label fx:id="notifLabel" text="" styleClass="badge"/>
+            <Button text="Logout" onAction="#handleLogout" styleClass="danger-button"/>
+        </HBox>
+    </top>
+
+    <!-- Main Content Area -->
+    <center>
+        <StackPane fx:id="contentArea">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+        </StackPane>
+    </center>
+</BorderPane>
