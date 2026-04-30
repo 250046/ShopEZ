@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<ScrollPane fitToWidth="true"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.shopez.controller.AddEditProductController">
+
+    <VBox spacing="15">
+        <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+        <Label fx:id="formTitle" text="Add Product" styleClass="section-title"/>
+
+        <VBox spacing="12" maxWidth="500" styleClass="card">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+            <VBox spacing="5">
+                <Label text="Product Image"/>
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <StackPane fx:id="imagePreviewBox" styleClass="image-upload-box" prefWidth="120" prefHeight="120" minWidth="120" minHeight="120">
+                        <ImageView fx:id="imagePreview" fitWidth="110" fitHeight="110" preserveRatio="true"/>
+                        <Label fx:id="imagePlaceholder" text="📷&#10;No image" styleClass="image-placeholder-label"/>
+                    </StackPane>
+                    <VBox spacing="8">
+                        <Button text="Choose Image..." onAction="#handleChooseImage" styleClass="primary-button"/>
+                        <Button fx:id="removeImageBtn" text="Remove" onAction="#handleRemoveImage" styleClass="secondary-button" visible="false" managed="false"/>
+                        <Label fx:id="imageFileLabel" text="JPG, PNG up to 5MB" styleClass="text-secondary"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <VBox spacing="3">
+                <Label text="Product Name"/>
+                <TextField fx:id="nameField" promptText="Product name"/>
+            </VBox>
+
+            <VBox spacing="3">
+                <Label text="Description"/>
+                <TextArea fx:id="descField" promptText="Product description" prefRowCount="3"/>
+            </VBox>
+
+            <HBox spacing="15">
+                <VBox spacing="3" HBox.hgrow="ALWAYS">
+                    <Label text="Price ($)"/>
+                    <TextField fx:id="priceField" promptText="0.00"/>
+                </VBox>
+                <VBox spacing="3" HBox.hgrow="ALWAYS">
+                    <Label text="Stock Quantity"/>
+                    <TextField fx:id="stockField" promptText="0"/>
+                </VBox>
+            </HBox>
+
+            <VBox spacing="3">
+                <Label text="Category"/>
+                <ComboBox fx:id="categoryCombo" promptText="Select or type category" editable="true" maxWidth="Infinity"/>
+            </VBox>
+
+            <VBox spacing="5">
+                <Label text="Product Type"/>
+                <HBox spacing="15">
+                    <RadioButton fx:id="physicalRadio" text="Physical" selected="true">
+                        <toggleGroup><ToggleGroup fx:id="typeGroup"/></toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="digitalRadio" text="Digital">
+                        <toggleGroup><fx:reference source="typeGroup"/></toggleGroup>
+                    </RadioButton>
+                </HBox>
+            </VBox>
+
+            <!-- Physical Product Fields -->
+            <VBox fx:id="physicalBox" spacing="8">
+                <HBox spacing="15">
+                    <VBox spacing="3" HBox.hgrow="ALWAYS">
+                        <Label text="Weight (kg)"/>
+                        <TextField fx:id="weightField" promptText="0.00"/>
+                    </VBox>
+                    <VBox spacing="3" HBox.hgrow="ALWAYS">
+                        <Label text="Dimensions"/>
+                        <TextField fx:id="dimensionsField" promptText="e.g. 30x20x10 cm"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <!-- Digital Product Fields -->
+            <VBox fx:id="digitalBox" spacing="8" visible="false" managed="false">
+                <VBox spacing="3">
+                    <Label text="Download URL"/>
+                    <TextField fx:id="downloadUrlField" promptText="https://..."/>
+                </VBox>
+            </VBox>
+
+            <HBox spacing="10">
+                <Button text="Save" onAction="#handleSave" styleClass="primary-button"/>
+                <Button text="Cancel" onAction="#handleCancel" styleClass="secondary-button"/>
+            </HBox>
+        </VBox>
+    </VBox>
+</ScrollPane>
