@@ -1,0 +1,510 @@
+/* ═══════════════════════════════════════════
+   ShopEZ — JavaFX CSS Theme
+   Primary: #4F46E5 (indigo)
+   Background: #F9FAFB
+   Card: #FFFFFF with border #E5E7EB
+   Text primary: #111827
+   Text secondary: #6B7280
+   Danger: #EF4444
+   Success: #10B981
+   ═══════════════════════════════════════════ */
+
+/* ── Global ── */
+.root {
+    -fx-background-color: #F9FAFB;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-text-fill: #111827;
+}
+
+/* ── Labels ── */
+.label {
+    -fx-text-fill: #111827;
+}
+
+.app-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4F46E5;
+}
+
+.subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6B7280;
+}
+
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.subsection-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.text-secondary {
+    -fx-text-fill: #6B7280;
+    -fx-font-size: 12px;
+}
+
+.product-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.price-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4F46E5;
+}
+
+.total-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.stock-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.rating-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #F59E0B;
+    -fx-font-weight: bold;
+}
+
+.error-label {
+    -fx-text-fill: #EF4444;
+    -fx-font-size: 11px;
+}
+
+.wallet-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #10B981;
+    -fx-font-size: 13px;
+}
+
+.stat-inline {
+    -fx-font-size: 12px;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+}
+
+/* ── Buttons ── */
+.button {
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+}
+
+.primary-button {
+    -fx-background-color: #4F46E5;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.primary-button:hover {
+    -fx-background-color: #4338CA;
+}
+
+.primary-button:pressed {
+    -fx-background-color: #3730A3;
+}
+
+.secondary-button {
+    -fx-background-color: #E5E7EB;
+    -fx-text-fill: #374151;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #D1D5DB;
+}
+
+.danger-button {
+    -fx-background-color: #EF4444;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.danger-button:hover {
+    -fx-background-color: #DC2626;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-padding: 8 14;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.nav-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+}
+
+.link {
+    -fx-text-fill: #4F46E5;
+    -fx-font-size: 12px;
+}
+
+/* ── Navigation Bar ── */
+.nav-bar {
+    -fx-background-color: #4F46E5;
+    -fx-padding: 10 20;
+}
+
+.nav-brand {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* ── Cards ── */
+.card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 4, 0, 0, 2);
+}
+
+.stat-card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-min-width: 180;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 4, 0, 0, 2);
+}
+
+.stat-number {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4F46E5;
+}
+
+.stat-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #6B7280;
+}
+
+/* ── Login Container ── */
+.login-container {
+    -fx-background-color: linear-gradient(to bottom right, #EEF2FF, #F9FAFB);
+}
+
+/* ── Text Fields ── */
+.text-field, .password-field, .text-area {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8 12;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused, .password-field:focused, .text-area:focused {
+    -fx-border-color: #4F46E5;
+    -fx-border-width: 2;
+}
+
+/* ── ComboBox ── */
+.combo-box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 4 8;
+}
+
+.combo-box:focused {
+    -fx-border-color: #4F46E5;
+}
+
+/* ── TableView ── */
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #F3F4F6;
+}
+
+.table-view .column-header {
+    -fx-background-color: #F3F4F6;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #374151;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #F3F4F6;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #EEF2FF;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #F9FAFB;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #111827;
+    -fx-padding: 8 6;
+}
+
+/* ── ListView ── */
+.list-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.list-view .list-cell {
+    -fx-padding: 8 12;
+    -fx-text-fill: #111827;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: #EEF2FF;
+    -fx-text-fill: #111827;
+}
+
+/* ── TabPane ── */
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: #F3F4F6;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #E5E7EB;
+    -fx-background-radius: 6 6 0 0;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #FFFFFF;
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #374151;
+    -fx-font-weight: bold;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #4F46E5;
+}
+
+/* ── Spinner ── */
+.spinner {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+/* ── RadioButton ── */
+.radio-button {
+    -fx-text-fill: #111827;
+}
+
+.radio-button .radio {
+    -fx-border-color: #D1D5DB;
+}
+
+.radio-button:selected .radio .dot {
+    -fx-background-color: #4F46E5;
+}
+
+/* ── ScrollPane ── */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ── Separator ── */
+.separator .line {
+    -fx-border-color: #E5E7EB;
+}
+
+/* ── Badge ── */
+.badge {
+    -fx-background-color: #FEF3C7;
+    -fx-text-fill: #92400E;
+    -fx-padding: 3 10;
+    -fx-background-radius: 12;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* ── Hyperlink ── */
+.hyperlink {
+    -fx-text-fill: #4F46E5;
+    -fx-border-color: transparent;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #4338CA;
+}
+
+/* ── Product Card Grid ── */
+.page-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.page-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #6B7280;
+}
+
+.search-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D1D5DB;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 8 15;
+    -fx-font-size: 13px;
+}
+
+.search-field:focused {
+    -fx-border-color: #4F46E5;
+    -fx-border-width: 2;
+}
+
+.products-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.products-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.product-card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 6, 0, 0, 2);
+}
+
+.product-card:hover {
+    -fx-border-color: #4F46E5;
+    -fx-effect: dropshadow(gaussian, rgba(79,70,229,0.15), 10, 0, 0, 4);
+}
+
+.product-image {
+    -fx-background-color: linear-gradient(to bottom right, #EEF2FF, #E0E7FF);
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+.product-icon {
+    -fx-font-size: 72px;
+    -fx-text-fill: #4F46E5;
+}
+
+.product-detail-image {
+    -fx-background-color: linear-gradient(to bottom right, #EEF2FF, #E0E7FF);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1;
+}
+
+.product-detail-icon {
+    -fx-font-size: 140px;
+    -fx-text-fill: #4F46E5;
+}
+
+.product-card-name {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #111827;
+}
+
+.product-card-price {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4F46E5;
+}
+
+.category-badge {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #4F46E5;
+    -fx-padding: 3 10;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+.stock-badge-out {
+    -fx-background-color: #FEE2E2;
+    -fx-text-fill: #991B1B;
+    -fx-padding: 3 10;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+/* ── Image Upload ── */
+.image-upload-box {
+    -fx-background-color: #F9FAFB;
+    -fx-border-color: #D1D5DB;
+    -fx-border-style: dashed;
+    -fx-border-width: 2;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.image-placeholder-label {
+    -fx-text-fill: #9CA3AF;
+    -fx-font-size: 11px;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
