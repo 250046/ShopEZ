@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.shopez.controller.SellerOrdersController">
+
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+
+    <Label text="Customer Orders" styleClass="section-title"/>
+
+    <TableView fx:id="orderTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="orderIdCol" text="Order #" prefWidth="80"/>
+            <TableColumn fx:id="dateCol" text="Date" prefWidth="140"/>
+            <TableColumn fx:id="customerCol" text="Customer" prefWidth="120"/>
+            <TableColumn fx:id="totalCol" text="Total" prefWidth="100"/>
+            <TableColumn fx:id="statusCol" text="Status" prefWidth="100"/>
+            <TableColumn fx:id="actionCol" text="Update Status" prefWidth="200"/>
+        </columns>
+    </TableView>
+</VBox>
