@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.shopez.controller.CartController">
+
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+
+    <Label text="Shopping Cart" styleClass="section-title"/>
+
+    <TableView fx:id="cartTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="productCol" text="Product" prefWidth="200"/>
+            <TableColumn fx:id="priceCol" text="Unit Price" prefWidth="100"/>
+            <TableColumn fx:id="qtyCol" text="Quantity" prefWidth="100"/>
+            <TableColumn fx:id="subtotalCol" text="Subtotal" prefWidth="100"/>
+            <TableColumn fx:id="removeCol" text="Action" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="20" alignment="CENTER_RIGHT">
+        <Label fx:id="totalLabel" text="Total: $0.00" styleClass="total-label"/>
+        <Button fx:id="checkoutBtn" text="Proceed to Checkout" onAction="#handleCheckout" styleClass="primary-button"/>
+    </HBox>
+</VBox>
