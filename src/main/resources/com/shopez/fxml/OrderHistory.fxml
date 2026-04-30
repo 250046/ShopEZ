@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.shopez.controller.OrderHistoryController">
+
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+
+    <Label text="Order History" styleClass="section-title"/>
+
+    <TableView fx:id="orderTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="orderIdCol" text="Order #" prefWidth="80"/>
+            <TableColumn fx:id="dateCol" text="Date" prefWidth="150"/>
+            <TableColumn fx:id="totalCol" text="Total" prefWidth="100"/>
+            <TableColumn fx:id="statusCol" text="Status" prefWidth="100"/>
+            <TableColumn fx:id="actionCol" text="Action" prefWidth="120"/>
+        </columns>
+    </TableView>
+
+    <!-- Order Detail Panel -->
+    <VBox fx:id="detailPanel" spacing="8" styleClass="card" visible="false" managed="false">
+        <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+        <Label fx:id="detailTitle" styleClass="subsection-title"/>
+        <TableView fx:id="itemsTable" prefHeight="150">
+            <columns>
+                <TableColumn fx:id="itemNameCol" text="Product" prefWidth="200"/>
+                <TableColumn fx:id="itemQtyCol" text="Qty" prefWidth="60"/>
+                <TableColumn fx:id="itemPriceCol" text="Price" prefWidth="100"/>
+                <TableColumn fx:id="itemSubCol" text="Subtotal" prefWidth="100"/>
+            </columns>
+        </TableView>
+        <Label fx:id="paymentInfo" styleClass="text-secondary"/>
+    </VBox>
+</VBox>
