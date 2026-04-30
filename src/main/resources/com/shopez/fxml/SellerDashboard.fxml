@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefWidth="900" prefHeight="650"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.shopez.controller.SellerDashboardController">
+
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="nav-bar">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <Label text="ShopEZ Seller" styleClass="nav-brand"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="My Products" onAction="#handleProducts" styleClass="nav-button"/>
+            <Button text="Orders" onAction="#handleOrders" styleClass="nav-button"/>
+            <Button text="Logout" onAction="#handleLogout" styleClass="danger-button"/>
+        </HBox>
+    </top>
+
+    <center>
+        <StackPane fx:id="contentArea">
+            <VBox spacing="20" alignment="TOP_CENTER">
+                <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+
+                <Label text="Seller Dashboard" styleClass="section-title"/>
+
+                <HBox spacing="20" alignment="CENTER">
+                    <VBox styleClass="stat-card" alignment="CENTER" spacing="5">
+                        <padding><Insets top="20" right="30" bottom="20" left="30"/></padding>
+                        <Label fx:id="totalProductsLabel" text="0" styleClass="stat-number"/>
+                        <Label text="Total Products" styleClass="stat-label"/>
+                    </VBox>
+                    <VBox styleClass="stat-card" alignment="CENTER" spacing="5">
+                        <padding><Insets top="20" right="30" bottom="20" left="30"/></padding>
+                        <Label fx:id="pendingOrdersLabel" text="0" styleClass="stat-number"/>
+                        <Label text="Pending Orders" styleClass="stat-label"/>
+                    </VBox>
+                    <VBox styleClass="stat-card" alignment="CENTER" spacing="5">
+                        <padding><Insets top="20" right="30" bottom="20" left="30"/></padding>
+                        <Label fx:id="totalRevenueLabel" text="\$0.00" styleClass="stat-number"/>
+                        <Label text="Total Revenue" styleClass="stat-label"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>
