@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefWidth="900" prefHeight="650"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.shopez.controller.AdminDashboardController">
+
+    <top>
+        <VBox>
+            <HBox spacing="10" alignment="CENTER_LEFT" styleClass="nav-bar">
+                <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+                <Label text="ShopEZ Admin" styleClass="nav-brand"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="totalUsersLabel" text="Users: 0" styleClass="stat-inline"/>
+                <Label fx:id="totalOrdersLabel" text="Orders: 0" styleClass="stat-inline"/>
+                <Label fx:id="totalRevenueLabel" text="Revenue: $0.00" styleClass="stat-inline"/>
+                <Button text="Logout" onAction="#handleLogout" styleClass="danger-button"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="tabPane">
+            <!-- Users Tab -->
+            <Tab text="Users" closable="false">
+                <VBox spacing="10">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <TableView fx:id="usersTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="userIdCol" text="ID" prefWidth="50"/>
+                            <TableColumn fx:id="userNameCol" text="Name" prefWidth="130"/>
+                            <TableColumn fx:id="userEmailCol" text="Email" prefWidth="170"/>
+                            <TableColumn fx:id="userRoleCol" text="Role" prefWidth="90"/>
+                            <TableColumn fx:id="userStatusCol" text="Status" prefWidth="100"/>
+                            <TableColumn fx:id="userActionCol" text="Actions" prefWidth="200"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- Products Tab -->
+            <Tab text="Products" closable="false">
+                <VBox spacing="10">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <TableView fx:id="productsTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="prodIdCol" text="ID" prefWidth="50"/>
+                            <TableColumn fx:id="prodNameCol" text="Name" prefWidth="160"/>
+                            <TableColumn fx:id="prodCategoryCol" text="Category" prefWidth="100"/>
+                            <TableColumn fx:id="prodPriceCol" text="Price" prefWidth="80"/>
+                            <TableColumn fx:id="prodStockCol" text="Stock" prefWidth="60"/>
+                            <TableColumn fx:id="prodSellerCol" text="Seller" prefWidth="100"/>
+                            <TableColumn fx:id="prodActiveCol" text="Active" prefWidth="60"/>
+                            <TableColumn fx:id="prodActionCol" text="Action" prefWidth="120"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <!-- Orders Tab -->
+            <Tab text="Orders" closable="false">
+                <VBox spacing="10">
+                    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+                    <TableView fx:id="ordersTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="orderIdCol" text="Order #" prefWidth="80"/>
+                            <TableColumn fx:id="orderDateCol" text="Date" prefWidth="140"/>
+                            <TableColumn fx:id="orderCustomerCol" text="Customer ID" prefWidth="100"/>
+                            <TableColumn fx:id="orderTotalCol" text="Total" prefWidth="100"/>
+                            <TableColumn fx:id="orderStatusCol" text="Status" prefWidth="100"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>
