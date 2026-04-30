@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<ScrollPane fitToWidth="true"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.shopez.controller.CheckoutController">
+
+    <VBox spacing="15">
+        <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+        <Label text="Checkout" styleClass="section-title"/>
+
+        <!-- Order Summary -->
+        <VBox spacing="8" styleClass="card">
+            <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+            <Label text="Order Summary" styleClass="subsection-title"/>
+            <TableView fx:id="summaryTable" prefHeight="200">
+                <columns>
+                    <TableColumn fx:id="itemCol" text="Product" prefWidth="250"/>
+                    <TableColumn fx:id="itemQtyCol" text="Qty" prefWidth="60"/>
+                    <TableColumn fx:id="itemPriceCol" text="Price" prefWidth="100"/>
+                    <TableColumn fx:id="itemSubtotalCol" text="Subtotal" prefWidth="100"/>
+                </columns>
+            </TableView>
+            <Label fx:id="orderTotalLabel" text="Total: $0.00" styleClass="total-label"/>
+        </VBox>
+
+        <!-- Shipping Address -->
+        <VBox spacing="5" styleClass="card">
+            <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+            <Label text="Shipping Address" styleClass="subsection-title"/>
+            <TextField fx:id="addressField" promptText="Enter shipping address"/>
+        </VBox>
+
+        <!-- Payment Method -->
+        <VBox spacing="10" styleClass="card">
+            <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+            <Label text="Payment Method" styleClass="subsection-title"/>
+            <HBox spacing="15">
+                <RadioButton fx:id="creditCardRadio" text="Credit Card" selected="true">
+                    <toggleGroup><ToggleGroup fx:id="paymentGroup"/></toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="walletRadio" text="Wallet">
+                    <toggleGroup><fx:reference source="paymentGroup"/></toggleGroup>
+                </RadioButton>
+            </HBox>
+
+            <!-- Credit Card Fields -->
+            <VBox fx:id="creditCardBox" spacing="5">
+                <TextField fx:id="cardNumberField" promptText="Card number (e.g. 4111-1111-1111-1111)"/>
+                <TextField fx:id="cardHolderField" promptText="Card holder name"/>
+            </VBox>
+
+            <!-- Wallet Info -->
+            <VBox fx:id="walletBox" spacing="5" visible="false" managed="false">
+                <Label fx:id="walletBalanceLabel" text="Available balance: $0.00"/>
+                <Label fx:id="walletWarning" styleClass="error-label" visible="false" managed="false"/>
+            </VBox>
+        </VBox>
+
+        <Button text="Place Order" onAction="#handlePlaceOrder" styleClass="primary-button" maxWidth="200"/>
+    </VBox>
+</ScrollPane>
