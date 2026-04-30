@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="20" prefWidth="900" prefHeight="650"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.shopez.controller.LoginController"
+      styleClass="login-container">
+
+    <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+
+    <VBox alignment="CENTER" spacing="15" maxWidth="400" styleClass="card">
+        <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+
+        <Label text="ShopEZ" styleClass="app-title"/>
+        <Label text="Sign in to your account" styleClass="subtitle"/>
+
+        <VBox spacing="5">
+            <Label text="Email"/>
+            <TextField fx:id="emailField" promptText="Enter your email"/>
+            <Label fx:id="emailError" styleClass="error-label" visible="false" managed="false"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Password"/>
+            <PasswordField fx:id="passwordField" promptText="Enter your password"/>
+            <Label fx:id="passwordError" styleClass="error-label" visible="false" managed="false"/>
+        </VBox>
+
+        <Button text="Sign In" onAction="#handleLogin" styleClass="primary-button" maxWidth="Infinity"/>
+
+        <Hyperlink text="Don't have an account? Register here" onAction="#handleRegisterLink" styleClass="link"/>
+    </VBox>
+</VBox>
