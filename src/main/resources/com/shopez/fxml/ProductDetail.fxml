@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<ScrollPane fitToWidth="true"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.shopez.controller.ProductDetailController">
+
+    <VBox spacing="15">
+        <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+        <Button text="← Back to Products" onAction="#handleBack" styleClass="secondary-button"/>
+
+        <HBox spacing="25">
+            <!-- Image column -->
+            <StackPane fx:id="productImageBox" styleClass="product-detail-image" prefWidth="350" prefHeight="350" minWidth="350" minHeight="350">
+                <ImageView fx:id="productImageView" fitWidth="330" fitHeight="330" preserveRatio="true"/>
+                <Label fx:id="productImageIcon" styleClass="product-detail-icon"/>
+            </StackPane>
+
+            <!-- Info column -->
+            <VBox spacing="12" HBox.hgrow="ALWAYS" styleClass="card">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                <Label fx:id="productType" styleClass="category-badge"/>
+                <Label fx:id="productName" styleClass="product-title" wrapText="true"/>
+                <Label fx:id="avgRating" styleClass="rating-label"/>
+                <Separator/>
+                <Label fx:id="productPrice" styleClass="price-label"/>
+                <Label fx:id="productShipping" styleClass="text-secondary"/>
+                <Label fx:id="productStock" styleClass="stock-label"/>
+                <Separator/>
+                <Label text="Description" styleClass="subsection-title"/>
+                <Label fx:id="productDescription" wrapText="true"/>
+                <Label fx:id="productCategory" styleClass="text-secondary"/>
+                <Label fx:id="productSeller" styleClass="text-secondary"/>
+                <Label fx:id="productExtra" wrapText="true" styleClass="text-secondary"/>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Quantity:"/>
+                    <Spinner fx:id="quantitySpinner" prefWidth="90"/>
+                    <Button fx:id="addToCartBtn" text="🛒  Add to Cart" onAction="#handleAddToCart" styleClass="primary-button"/>
+                    <Button fx:id="watchStockBtn" text="🔔 Notify when in stock" onAction="#handleWatchStock" styleClass="secondary-button" visible="false" managed="false"/>
+                </HBox>
+            </VBox>
+        </HBox>
+
+        <!-- Reviews Section -->
+        <VBox spacing="10" styleClass="card">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            <Label text="Customer Reviews" styleClass="section-title"/>
+            <ListView fx:id="reviewList" prefHeight="200"/>
+
+            <VBox fx:id="reviewFormBox" spacing="8" visible="false" managed="false">
+                <Separator/>
+                <Label text="Leave a Review" styleClass="subsection-title"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Rating:"/>
+                    <ComboBox fx:id="ratingCombo" promptText="Select rating"/>
+                </HBox>
+                <TextArea fx:id="reviewComment" promptText="Write your review..." prefRowCount="3"/>
+                <Button text="Submit Review" onAction="#handleSubmitReview" styleClass="primary-button"/>
+            </VBox>
+        </VBox>
+    </VBox>
+</ScrollPane>
