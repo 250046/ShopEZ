@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.shopez.controller.SellerProductsController">
+
+    <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="My Products" styleClass="section-title"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="+ Add Product" onAction="#handleAddProduct" styleClass="primary-button"/>
+    </HBox>
+
+    <TableView fx:id="productTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="nameCol" text="Name" prefWidth="160"/>
+            <TableColumn fx:id="categoryCol" text="Category" prefWidth="100"/>
+            <TableColumn fx:id="priceCol" text="Price" prefWidth="80"/>
+            <TableColumn fx:id="stockCol" text="Stock" prefWidth="60"/>
+            <TableColumn fx:id="typeCol" text="Type" prefWidth="80"/>
+            <TableColumn fx:id="activeCol" text="Active" prefWidth="60"/>
+            <TableColumn fx:id="actionCol" text="Actions" prefWidth="220"/>
+        </columns>
+    </TableView>
+</VBox>
